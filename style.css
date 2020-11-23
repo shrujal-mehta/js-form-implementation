@@ -1,0 +1,36 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.row {
+    padding-bottom: 10px;
+}
+
+form span {
+    font-size: 12px;
+}
+
+fieldset {
+    background-color: white;
+    border: 1px solid rgb(170, 169, 169);
+    border-radius: 15px;
+}
+
+legend {
+    width: fit-content;
+    margin: 20px;
+    font-size: x-large;
+    /* background-color: skyblue; */
+}
+
+label>small {
+    color: gray;
+    font-size: inherit;
+}
+
+input,
+select {
+    border-radius: 7px!important;
+}

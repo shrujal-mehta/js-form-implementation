@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
+	<title>Form</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 offset-md-2">
+				<fieldset>
+					<legend>Add New Address</legend>
+					<form method="GET" class="p-3" onsubmit="return validateForm()">
+						<div class="row">
+							<div class="col-md-6 form-group">
+								<label for="InputFirstName">First Name </label>
+								<input type="text" class="form-control" id="InputFirstName" aria-describedby="firstName">
+								<span id="fnameMsg" class="form-text text-danger "></span>
+							</div>
+							<div class="col-md-6 form-group">
+								<label for="InputLastName">Last Name </label>
+								<input type="text" class="form-control" id="InputLastName" aria-describedby="lastName">
+								<span id="lnameMsg" class="form-text text-danger"></span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12 form-group">
+								<label for="InputStreetAddress">Street Address</label>
+								<input type="text" class="form-control" id="InputStreetAddress" aria-describedby="streetAddress" maxlength="40">
+								<span id="streetAddressMsg" class="form-text" style="color: slategrey;">(Use 40 Characters only)</span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12 form-group">
+								<label for="InputAddress">Appartment,Suite or Company Name<small>(optional)</small></label>
+								<input type="text" class="form-control" id="InputAddress" aria-describedby="Address">
+                            </div>
+							</div>
+							<div class="row">
+								<div class="col-md-6 form-group">
+									<label for="InputCity">City</label>
+									<input type="text" class="form-control" id="InputCity" aria-describedby="streetAddress">
+									<span id="cityMsg" class="form-text text-danger"></span>
+								</div>
+								<div class="col-6 col-md-3 form-group">
+									<label for="InputState">State/Province</label>
+									<input type="text" class="form-control" id="InputState" aria-describedby="streetAddress" maxlength="2">
+									<span id="stateMsg" class="form-text" style="color: slategrey;">(It must be 2 Characters)</span>
+								</div>
+								<div class="col-6 col-md-3 form-group">
+									<label for="InputZip">Zip</label>
+									<input type="text" class="form-control" id="InputZip" aria-describedby="streetAddress">
+									<span id="zipMsg" class="form-text text-danger"></span>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-2 form-group">
+									<label for="InputCountry">Country:</label>
+								</div>
+								<div class="col-md-5 form-group">
+									<select class="form-control" id="InputCountry">
+                                    <option>India</option>
+                                    <option>Russia</option>
+                                    <option>Canada</option>
+                                    <option>China</option>
+                                    <option>United States</option>
+                                    <option>Brazil</option>
+                                    <option>Australia</option>
+                                    <option>Argentina</option>
+                                    <option>Kazakhstan</option>
+                                    <option>Sudan</option>
+                                </select>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-7 col-md-6 form-group">
+									<label for="InputPhone">Phone</label>
+									<input type="number" name="phoneNumber" class="form-control" id="InputPhone" aria-describedby="streetAddress">
+									<span id="phoneMsg" class="form-text text-danger"></span>
+								</div>
+								<div class="col-5 col-md-3  form-group">
+									<label for="InputNumberType">State/Province</label>
+									<select class="form-control" name="phoneNumber" id="InputNumberType">
+                                    <option>Mobile</option>
+                                    <option>Home</option>
+                                </select>
+								</div>
+
+							</div>
+							<div class="row pl-3">
+								<div class="form-check pb-2">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+									<label class="form-check-label" for="exampleRadios1">
+                              Set as default shipping address and apply to all future Auto Delivery orders.
+                            </label>
+								</div>
+								<div class="form-check pb-2">
+									<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+									<label class="form-check-label" for="exampleRadios2">
+                              Use this shipping address only for this shipment.
+                            </label>
+								</div>
+							</div>
+							<!-- <div class="row ">
+                            <div class="col-md-6">
+                                <input type="text" name="firstName">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="firstName">
+                            </div>
+                        </div> -->
+							<div class="row">
+								<div class="col-3 offset-5 col-md-2 offset-md-8 text-center">
+									<button type="reset" class="btn btn-outline-primary" onclick="clearForm()">Cancel</button>
+								</div>
+								<div class=" col-3 col-md-2 text-center">
+									<button type="submit " class="btn btn-primary ">Submit</button>
+								</div>
+							</div>
+					</form>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js "
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js "
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous ">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js "
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous ">
+	</script>
+	<script src="/index.js"></script>
+</body>
+
+</html>
